@@ -398,8 +398,7 @@ func (m *ListModel) View() string {
 	}
 	viewBuilder.WriteString("\n")
 	viewBuilder.WriteString(statusText)
-
-	return m.outerMarginStyle().Render(viewBuilder.String())
+	return m.outerMarginStyle().Width(m.width).Align(lipgloss.Center).Render(viewBuilder.String())
 }
 
 func (m *ListModel) FullHelp() [][]key.Binding {
